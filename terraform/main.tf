@@ -1,4 +1,4 @@
-# KB Assistant Azure — Infrastructure v2
+# KB Assistant Azure — Infrastructure v1.1
 
 
 terraform {
