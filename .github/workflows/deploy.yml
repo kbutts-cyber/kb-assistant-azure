@@ -25,7 +25,11 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Login to Azure Container Registry
-        run: az acr login --name kbassistantacrnrehez
+        uses: docker/login-action@v3
+        with:
+          registry: kbassistantacrnrehez.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build and push Docker image
         working-directory: app
