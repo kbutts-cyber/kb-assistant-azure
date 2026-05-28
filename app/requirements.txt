@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+openai
+azure-identity
+azure-keyvault-secrets
+azure-storage-blob
+python-multipart
