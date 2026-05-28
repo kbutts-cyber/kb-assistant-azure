@@ -1,5 +1,4 @@
-# KB Assistant Azure — Infrastructure v1.1
-
+# KB Assistant v2 — Azure OpenAI + Terraform + GitHub Actions
 
 terraform {
   required_providers {
