@@ -1,4 +1,4 @@
-KB Assistant — Azure
+# KB Assistant — Azure
 An AI-powered knowledge base assistant built on Azure. Ask questions in plain English, get answers backed by your own documents. Fully automated infrastructure and deployment pipeline — no manual portal clicks, no local setup required for users.
 Live demo: Drop your own docs in /docs, deploy with one command, get a hosted AI assistant for your knowledge base in minutes.
 
