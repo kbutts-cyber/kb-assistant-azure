@@ -22,3 +22,7 @@ variable "openai_api_key" {
   type      = string
   sensitive = true
 }
+
+variable "pipeline_object_id" {
+  type = string
+}

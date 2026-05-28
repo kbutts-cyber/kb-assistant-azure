@@ -52,6 +52,7 @@ module "keyvault" {
   object_id           = data.azurerm_client_config.current.object_id
   suffix              = random_string.suffix.result
   openai_api_key      = var.openai_api_key
+  pipeline_object_id = "b0e8857b-6e09-4349-8fb0-a9b45fdc7ddb"
 }
 
 module "openai" {
