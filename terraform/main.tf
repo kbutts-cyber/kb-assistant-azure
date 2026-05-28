@@ -1,3 +1,6 @@
+# KB Assistant Azure — Infrastructure
+
+
 terraform {
   required_providers {
     azurerm = {
