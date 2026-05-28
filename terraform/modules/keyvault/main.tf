@@ -10,7 +10,7 @@ resource "azurerm_key_vault" "main" {
 resource "azurerm_key_vault_access_policy" "admin" {
   key_vault_id = azurerm_key_vault.main.id
   tenant_id    = var.tenant_id
-  object_id    = var.object_id
+  object_id    = var.admin_object_id
 
   secret_permissions = [
     "Get",

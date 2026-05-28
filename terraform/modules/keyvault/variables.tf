@@ -26,3 +26,7 @@ variable "openai_api_key" {
 variable "pipeline_object_id" {
   type = string
 }
+
+variable "admin_object_id" {
+  type = string
+}

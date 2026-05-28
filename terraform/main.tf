@@ -49,7 +49,7 @@ module "keyvault" {
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   tenant_id           = data.azurerm_client_config.current.tenant_id
-  object_id           = data.azurerm_client_config.current.object_id
+  admin_object_id     = "0acaeedc-d49f-40bf-9600-252139115804"
   suffix              = random_string.suffix.result
   openai_api_key      = var.openai_api_key
   pipeline_object_id  = "b0e8857b-6e09-4349-8fb0-a9b45fdc7ddb"
