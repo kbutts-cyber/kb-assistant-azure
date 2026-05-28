@@ -1,4 +1,4 @@
-# KB Assistant v2 — Azure OpenAI + Terraform + GitHub Actions + Docker + ACR final
+# KB Assistant v2 — Azure OpenAI + Terraform + GitHub Actions + Docker + ACR final version
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
