@@ -13,11 +13,11 @@ resource "azurerm_key_vault_access_policy" "admin" {
   object_id    = var.object_id
 
   secret_permissions = [
-   "Get",
-   "List",
-   "Set",
-   "Delete",
-   "Purge"
+    "Get",
+    "List",
+    "Set",
+    "Delete",
+    "Purge"
   ]
 }
 

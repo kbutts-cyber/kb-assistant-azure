@@ -4,7 +4,7 @@ output "app_url" {
 
 output "principal_id" {
   value = azurerm_container_app.main.identity[0].principal_id
-} 
+}
 
 output "acr_login_server" {
   value = azurerm_container_registry.main.login_server

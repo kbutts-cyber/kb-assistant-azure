@@ -24,7 +24,7 @@ resource "azurerm_container_app_environment" "main" {
 resource "azurerm_container_app" "main" {
   name                         = "ca-kb-${var.suffix}"
   container_app_environment_id = azurerm_container_app_environment.main.id
-  resource_group_name           = var.resource_group_name
+  resource_group_name          = var.resource_group_name
   revision_mode                = "Single"
 
   identity {
@@ -47,7 +47,7 @@ resource "azurerm_container_app" "main" {
         name  = "AZURE_OPENAI_ENDPOINT"
         value = var.openai_endpoint
       }
-      
+
       env {
         name  = "STORAGE_ACCOUNT_NAME"
         value = var.storage_account_name
@@ -59,13 +59,13 @@ resource "azurerm_container_app" "main" {
       }
     }
   }
-  
+
   ingress {
     external_enabled = true
     target_port      = 8000
 
     traffic_weight {
-      percentage = 100
+      percentage      = 100
       latest_revision = true
     }
   }
@@ -77,7 +77,7 @@ resource "azurerm_key_vault_access_policy" "container_app" {
   object_id    = azurerm_container_app.main.identity[0].principal_id
 
   secret_permissions = [
-   "Get",
-   "List"
+    "Get",
+    "List"
   ]
 }

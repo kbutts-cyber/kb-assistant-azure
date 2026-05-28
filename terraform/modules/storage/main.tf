@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "main" {
 
   allow_nested_items_to_be_public = false
   min_tls_version                 = "TLS1_2"
-  https_traffic_only_enabled              = true
+  https_traffic_only_enabled      = true
 }
 
 resource "azurerm_storage_container" "docs" {
