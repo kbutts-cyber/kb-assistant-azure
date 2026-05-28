@@ -1,0 +1,41 @@
+name: Deploy App
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'app/**'
+
+env:
+  REGISTRY: kbassistantacrnrehez.azurecr.io
+  IMAGE_NAME: kb-assistant
+  CONTAINER_APP_NAME: ca-kb-nrehez
+  RESOURCE_GROUP: rg-kb-assistant-azure
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name kbassistantacrnrehez
+
+      - name: Build and push Docker image
+        working-directory: app
+        run: |
+          docker build -t $REGISTRY/$IMAGE_NAME:${{ github.sha }} .
+          docker push $REGISTRY/$IMAGE_NAME:${{ github.sha }}
+
+      - name: Update Container App with new image
+        run: |
+          az containerapp update \
+            --name $CONTAINER_APP_NAME \
+            --resource-group $RESOURCE_GROUP \
+            --image $REGISTRY/$IMAGE_NAME:${{ github.sha }}
