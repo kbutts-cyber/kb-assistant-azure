@@ -1,3 +1,11 @@
+resource "azurerm_container_registry" "main" {
+  name                = "kbassistantacr${var.suffix}"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  sku                 = "Basic"
+  admin_enabled       = true
+}
+
 resource "azurerm_log_analytics_workspace" "main" {
   name                = "log-kb-${var.suffix}"
   location            = var.location

@@ -1,0 +1,5 @@
+location             = "eastus"
+openai_location      = "eastus"
+resource_group_name  = "rg-kb-assistant-azure"
+openai_api_key       = "<your-azure-openai-key>"
+app_password         = "<your-app-password>"

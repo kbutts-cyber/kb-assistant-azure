@@ -13,3 +13,7 @@ output "openai_endpoint" {
 output "key_vault_url" {
   value = module.keyvault.key_vault_url
 }
+
+output "acr_login_server" {
+  value = module.container_app.acr_login_server
+}
